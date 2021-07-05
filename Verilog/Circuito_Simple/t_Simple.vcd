@@ -1,0 +1,51 @@
+$date
+	Mon Jul  5 11:35:16 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module t_circuito_simple_con_retardo_de_prop $end
+$var wire 1 ! E $end
+$var wire 1 " D $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$var reg 1 % C $end
+$scope module M1 $end
+$var wire 1 # A $end
+$var wire 1 $ B $end
+$var wire 1 % C $end
+$var wire 1 " D $end
+$var wire 1 ! E $end
+$var wire 1 & w1 $end
+$var wire 1 ' wl $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x'
+z&
+0%
+0$
+0#
+x"
+x!
+$end
+#10000
+1!
+#30000
+1"
+0'
+#100000
+1%
+1$
+1#
+#110000
+0!
+#130000
+x"
+1'
+#200000
