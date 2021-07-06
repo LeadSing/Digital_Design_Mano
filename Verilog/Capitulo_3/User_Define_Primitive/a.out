@@ -1,0 +1,43 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x561c2814e1b0 .scope module, "Circuito_UDP_02467" "Circuito_UDP_02467" 2 27;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "e";
+    .port_info 1 /OUTPUT 1 "f";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+    .port_info 4 /INPUT 1 "c";
+    .port_info 5 /INPUT 1 "d";
+UDP_UDP_02467 .udp/comb "UDP_02467", 3
+ ,"0001"
+ ,"0010"
+ ,"0101"
+ ,"0110"
+ ,"1001"
+ ,"1010"
+ ,"1101"
+ ,"1111";
+o0x7f1f4a31d018 .functor BUFZ 1, C4<z>; HiZ drive
+o0x7f1f4a31d048 .functor BUFZ 1, C4<z>; HiZ drive
+o0x7f1f4a31d078 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x561c2815cd00 .udp UDP_UDP_02467, o0x7f1f4a31d018, o0x7f1f4a31d048, o0x7f1f4a31d078;
+o0x7f1f4a31d0a8 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x561c2816cf20 .functor AND 1, L_0x561c2815cd00, o0x7f1f4a31d0a8, C4<1>, C4<1>;
+v0x561c2814e340_0 .net "a", 0 0, o0x7f1f4a31d018;  0 drivers
+v0x561c2815c850_0 .net "b", 0 0, o0x7f1f4a31d048;  0 drivers
+v0x561c2815c910_0 .net "c", 0 0, o0x7f1f4a31d078;  0 drivers
+v0x561c2815c9b0_0 .net "d", 0 0, o0x7f1f4a31d0a8;  0 drivers
+v0x561c2815ca70_0 .net "e", 0 0, L_0x561c2815cd00;  1 drivers
+v0x561c2815cb80_0 .net "f", 0 0, L_0x561c2816cf20;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "UDP_02467.v";

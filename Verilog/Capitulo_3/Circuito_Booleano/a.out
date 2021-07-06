@@ -1,0 +1,88 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55aa0368eb80 .scope module, "t_circuito_booleano" "t_circuito_booleano" 2 5;
+ .timescale -9 -12;
+v0x55aa036b5020_0 .var "A", 0 0;
+v0x55aa036b50e0_0 .var "B", 0 0;
+v0x55aa036b51b0_0 .var "C", 0 0;
+v0x55aa036b52b0_0 .var "D", 0 0;
+v0x55aa036b5380_0 .net "E", 0 0, L_0x55aa036b58f0;  1 drivers
+v0x55aa036b5420_0 .net "F", 0 0, L_0x55aa036b5f50;  1 drivers
+S_0x55aa036a0210 .scope module, "M1" "circuito_booleano" 2 9, 3 3 0, S_0x55aa0368eb80;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "E";
+    .port_info 1 /OUTPUT 1 "F";
+    .port_info 2 /INPUT 1 "A";
+    .port_info 3 /INPUT 1 "B";
+    .port_info 4 /INPUT 1 "C";
+    .port_info 5 /INPUT 1 "D";
+L_0x55aa036b54f0 .functor AND 1, v0x55aa036b50e0_0, v0x55aa036b51b0_0, C4<1>, C4<1>;
+L_0x55aa036b5630 .functor OR 1, v0x55aa036b5020_0, L_0x55aa036b54f0, C4<0>, C4<0>;
+L_0x55aa036b57e0 .functor AND 1, L_0x55aa036b5740, v0x55aa036b52b0_0, C4<1>, C4<1>;
+L_0x55aa036b58f0 .functor OR 1, L_0x55aa036b5630, L_0x55aa036b57e0, C4<0>, C4<0>;
+L_0x55aa036b5b20 .functor AND 1, L_0x55aa036b5a80, v0x55aa036b51b0_0, C4<1>, C4<1>;
+L_0x55aa036b5cc0 .functor AND 1, v0x55aa036b50e0_0, L_0x55aa036b5b90, C4<1>, C4<1>;
+L_0x55aa036b5e40 .functor AND 1, L_0x55aa036b5cc0, L_0x55aa036b5d70, C4<1>, C4<1>;
+L_0x55aa036b5f50 .functor OR 1, L_0x55aa036b5b20, L_0x55aa036b5e40, C4<0>, C4<0>;
+v0x55aa036a0440_0 .net "A", 0 0, v0x55aa036b5020_0;  1 drivers
+v0x55aa036b43f0_0 .net "B", 0 0, v0x55aa036b50e0_0;  1 drivers
+v0x55aa036b44b0_0 .net "C", 0 0, v0x55aa036b51b0_0;  1 drivers
+v0x55aa036b4550_0 .net "D", 0 0, v0x55aa036b52b0_0;  1 drivers
+v0x55aa036b4610_0 .net "E", 0 0, L_0x55aa036b58f0;  alias, 1 drivers
+v0x55aa036b4720_0 .net "F", 0 0, L_0x55aa036b5f50;  alias, 1 drivers
+v0x55aa036b47e0_0 .net *"_ivl_1", 0 0, L_0x55aa036b54f0;  1 drivers
+v0x55aa036b48a0_0 .net *"_ivl_11", 0 0, L_0x55aa036b5a80;  1 drivers
+v0x55aa036b4960_0 .net *"_ivl_13", 0 0, L_0x55aa036b5b20;  1 drivers
+v0x55aa036b4a20_0 .net *"_ivl_15", 0 0, L_0x55aa036b5b90;  1 drivers
+v0x55aa036b4ae0_0 .net *"_ivl_17", 0 0, L_0x55aa036b5cc0;  1 drivers
+v0x55aa036b4ba0_0 .net *"_ivl_19", 0 0, L_0x55aa036b5d70;  1 drivers
+v0x55aa036b4c60_0 .net *"_ivl_21", 0 0, L_0x55aa036b5e40;  1 drivers
+v0x55aa036b4d20_0 .net *"_ivl_3", 0 0, L_0x55aa036b5630;  1 drivers
+v0x55aa036b4de0_0 .net *"_ivl_5", 0 0, L_0x55aa036b5740;  1 drivers
+v0x55aa036b4ea0_0 .net *"_ivl_7", 0 0, L_0x55aa036b57e0;  1 drivers
+L_0x55aa036b5740 .reduce/nor v0x55aa036b50e0_0;
+L_0x55aa036b5a80 .reduce/nor v0x55aa036b50e0_0;
+L_0x55aa036b5b90 .reduce/nor v0x55aa036b51b0_0;
+L_0x55aa036b5d70 .reduce/nor v0x55aa036b52b0_0;
+    .scope S_0x55aa0368eb80;
+T_0 ;
+    %vpi_call 2 13 "$dumpfile", "t_Simple.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55aa0368eb80 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55aa036b5020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55aa036b50e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55aa036b51b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55aa036b52b0_0, 0, 1;
+    %delay 100000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55aa036b5020_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55aa036b50e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55aa036b51b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55aa036b52b0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x55aa0368eb80;
+T_1 ;
+    %delay 200000, 0;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "t_Simple.v";
+    "Simple_Booleano.v";
