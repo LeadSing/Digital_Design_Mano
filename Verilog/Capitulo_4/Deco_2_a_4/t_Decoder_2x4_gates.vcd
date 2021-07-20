@@ -1,0 +1,74 @@
+$date
+	Tue Jul 20 09:59:41 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module t_Decoder_2x4_gates $end
+$var wire 4 ! D [0:3] $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$var reg 1 $ enable $end
+$scope module M1 $end
+$var wire 1 " A $end
+$var wire 1 % A_not $end
+$var wire 1 # B $end
+$var wire 1 & B_not $end
+$var wire 1 $ enable $end
+$var wire 1 ' enable_not $end
+$var wire 4 ( D [0:3] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b111 (
+1'
+1&
+1%
+0$
+0#
+0"
+b111 !
+$end
+#100000
+0&
+b1011 !
+b1011 (
+1#
+#200000
+1&
+b1101 !
+b1101 (
+0%
+0#
+1"
+#300000
+0&
+b1110 !
+b1110 (
+1#
+#400000
+1&
+1%
+b1111 !
+b1111 (
+0'
+0#
+0"
+1$
+#500000
+0&
+1#
+#600000
+1&
+0%
+0#
+1"
+#700000
+0&
+1#
+#1000000
